@@ -25,7 +25,8 @@ type Tab = "genel" | "gorev" | "istizan" | "not";
 function Crescent({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 64 64" className={className} aria-hidden>
-      <path d="M38 8a24 24 0 1 0 0 48a19 19 0 1 1 0-48z" fill="currentColor" />
+      <mask id="crescent-mask"><rect width="64" height="64" fill="#fff" /><circle cx="36" cy="30" r="19" fill="#000" /></mask>
+      <circle cx="28" cy="32" r="22" fill="currentColor" mask="url(#crescent-mask)" />
       <path d="M46 24l2.4 6.2 6.6.3-5.2 4.1 1.8 6.4-5.6-3.7-5.6 3.7 1.8-6.4-5.2-4.1 6.6-.3z" fill="currentColor" />
     </svg>
   );
