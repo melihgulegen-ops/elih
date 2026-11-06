@@ -71,13 +71,14 @@ export function useLocal<T>(key: string, initial: T) {
 export const signed = (e: Entry) => (e.kind === "malzeme" ? -e.amount : e.amount);
 
 export function balances(entries: Entry[], nowMonth = monthOf(today())) {
-  let carry = 0, thisMonth = 0;
+  let carry = 0, thisMonth = 0, spent = 0;
   for (const e of entries) {
+    if (e.kind === "malzeme") spent += e.amount;
     if (monthOf(e.date) < nowMonth) carry += signed(e);
     else if (monthOf(e.date) === nowMonth) thisMonth += signed(e);
   }
   const total = entries.reduce((s, e) => s + signed(e), 0);
-  return { carry, thisMonth, total };
+  return { carry, thisMonth, total, spent };
 }
 
 export function monthly(entries: Entry[]) {

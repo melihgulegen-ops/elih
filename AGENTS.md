@@ -32,4 +32,5 @@ use the editor.
 ## Project rules
 - App data (tasks, istizan entries, notes) is stored in browser localStorage via `useLocal` in src/lib/store.ts — the user wants it saved on the phone and usable offline.
 - Balance = yatan + iade − malzeme; logic lives in src/lib/store.ts and is covered by src/test/balance.test.ts.
+- Compute all-time material spending in the shared balance helper so the İstizan summary remains independent of list filters.
 - PDF reports open a print window (keeps Turkish characters intact); Excel uses the lazily imported `xlsx` package.

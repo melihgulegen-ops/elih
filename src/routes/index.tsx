@@ -229,7 +229,14 @@ function Istizan({ entries, setEntries }: { entries: Entry[]; setEntries: (f: (e
     <div>
       <SectionHead title="İstizan" action={<button className="btn-gold" onClick={() => setForm({ id: "", kind, name: "", date: today(), person: "", amount: 0 })}>+ Yeni İstizan Ekle</button>} />
       <div className="mb-4 flex snap-x gap-3 overflow-x-auto pb-1">
-        <Card className="hero-card min-w-[80%] snap-start"><p className="text-sm text-muted-foreground">Güncel Bakiye</p><p className="font-display text-3xl text-gold">{tl(b.total)}</p></Card>
+        <Card className="hero-card min-w-[80%] snap-start">
+          <p className="text-sm text-muted-foreground">Güncel Bakiye</p>
+          <p className="font-display text-3xl text-gold">{tl(b.total)}</p>
+          <div className="mt-3 border-t border-border pt-3">
+            <p className="text-sm text-muted-foreground">Harcanan Tutar</p>
+            <p className="text-xl font-semibold text-destructive">{tl(b.spent)}</p>
+          </div>
+        </Card>
         <Card className="min-w-[80%] snap-start">
           <p className="text-sm text-muted-foreground">Geçen Aydan Devreden</p><p className="text-xl font-semibold">{tl(b.carry)}</p>
           <p className="mt-2 text-sm text-muted-foreground">Bu Ayki Bakiye</p><p className="text-xl font-semibold">{tl(b.thisMonth)}</p>
