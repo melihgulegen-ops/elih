@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- App data (tasks, istizan entries, notes) is stored in browser localStorage via `useLocal` in src/lib/store.ts — the user wants it saved on the phone and usable offline.
+- Balance = yatan + iade − malzeme; logic lives in src/lib/store.ts and is covered by src/test/balance.test.ts.
+- PDF reports open a print window (keeps Turkish characters intact); Excel uses the lazily imported `xlsx` package.
