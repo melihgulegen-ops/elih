@@ -16,15 +16,17 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: oven-sh/setup-bun@v2
-         
+        # Buraya with: bun-version: latest ekleyebilirsin ama varsayılan hali de çalışır.
 
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: "21"
-          packages: tools
+          # DİKKAT: packages: tools satırını buradan SİLDİK.
 
       - uses: android-actions/setup-android@v3
+        with:
+          packages: '' # Varsayılan 'tools' paketini indirmesini engelliyoruz.
 
       - name: Install dependencies
         run: bun install
