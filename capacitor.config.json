@@ -1,0 +1,9 @@
+{
+  "appId": "com.mgn.melihistan",
+  "appName": "Melihistan",
+  "webDir": "public",
+  "server": {
+    "url": "https://istizan.lovable.app",
+    "androidScheme": "https"
+  }
+}
